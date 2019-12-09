@@ -1,6 +1,10 @@
 from django_twilio.decorators import twilio_view
-
+from twilio.rest import Client
 from twilio.twiml.voice_response import VoiceResponse
+import os
+
+
+
 
 @twilio_view
 def gather_digits(request):
@@ -31,3 +35,17 @@ def handle_response(request):
         twilio_response.sms('Issue',to=number)
 
     return twilio_response
+
+
+@twilio_view
+def user_call(request):
+    account_sid=os.environ["TWILIO_ACCOUNT_SID"]
+    auth_token=os.environ["TWILIO_AUTH_TOKEN"]
+
+    client=Client(account_sid,auth_token)
+    call=client.calls.create(
+        to="+919354531933",
+        from_="+12512441313",
+        url="http://demo.twilio.com/docs/voice.xml"
+    )
+    print(call.sid)

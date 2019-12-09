@@ -24,4 +24,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('gather/', views.gather_digits, name='gather'),
     path('respond/',views.handle_response, name='respond'),
+    path('makecall/',views.user_call, name='makecall'),
 ]
