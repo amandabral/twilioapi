@@ -40,8 +40,8 @@ INSTALLED_APPS = [
     'django_twilio',
 ]
 
-TWILIO_ACCOUNT_SID=""
-TWILIO_AUTH_TOKEN=""
+TWILIO_ACCOUNT_SID="AC42a13278ca448ac77b1900e05edf4b60"
+TWILIO_AUTH_TOKEN="87cfe36e364f0e40efd807b6d835ef2f"
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
